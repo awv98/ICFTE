@@ -3,199 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ICFTE — Experience</title>
+  <title>ICFTE</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
 
     body {
-      font-family:'Anton', sans-serif;
-      background:#0b0606;
-      color:#f3e9e6;
-      overflow-x:hidden;
+      font-family:'Poppins', sans-serif;
+      background:#8a3f14;
+      color:#e8e3df;
     }
 
-    section { padding:100px 12%; position:relative; }
-
-    h1,h2 { letter-spacing:4px; text-transform:uppercase; }
-
-    /* GLOBAL GLOW / ATMOSPHERE */
-    .fog {
-      position:fixed;
-      width:200%;
-      height:200%;
-      top:-50%; left:-50%;
-      background:radial-gradient(circle, rgba(120,30,40,0.08), transparent 60%);
-      animation: drift 25s linear infinite;
-      pointer-events:none;
-    }
-
-    @keyframes drift {
-      from { transform:translate(0,0); }
-      to { transform:translate(200px,150px); }
-    }
-
-    /* HERO */
-    .hero {
-      height:100vh;
+    section {
+      min-height:100vh;
       display:flex;
       flex-direction:column;
       justify-content:center;
       align-items:center;
       text-align:center;
+      padding:40px 20px;
     }
 
-    .hero h1 {
-      font-size:5rem;
-      text-shadow:0 0 25px rgba(255,180,160,0.15);
+    .hero {
+      position:relative;
     }
 
-    .hero p {
-      margin-top:20px;
-      opacity:0.6;
+    .artist {
+      font-size:14px;
       letter-spacing:2px;
+      margin-bottom:20px;
+      opacity:0.8;
     }
 
-    .btn {
+    .title {
+      font-size:18vw;
+      font-weight:600;
+      line-height:0.9;
+      color:#d9d3cf;
+    }
+
+    .tracklist {
       margin-top:40px;
-      padding:12px 30px;
-      border:1px solid rgba(255,255,255,0.4);
-      background:transparent;
-      color:white;
-      cursor:pointer;
-      transition:0.4s;
+      font-size:14px;
+      line-height:1.6;
+      letter-spacing:1px;
     }
 
-    .btn:hover {
-      background:white;
-      color:black;
+    .tracklist p {
+      margin:2px 0;
     }
 
-    /* VINYL */
-    .vinyl {
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:60px;
-      flex-wrap:wrap;
-    }
-
-    .record {
+    .cover-art {
+      position:absolute;
+      bottom:0;
+      right:0;
       width:260px;
-      height:260px;
-      border-radius:50%;
-      background:radial-gradient(circle, #300, #000 70%);
-      box-shadow:0 0 60px rgba(0,0,0,0.9);
-      animation:spin 18s linear infinite;
-    }
-
-    @keyframes spin { from{transform:rotate(0);} to{transform:rotate(360deg);} }
-
-    .vinyl-text { max-width:420px; }
-
-    .vinyl-text p { opacity:0.7; margin-top:15px; }
-
-    /* TRACKLIST */
-    .tracklist ul { list-style:none; margin-top:30px; }
-
-    .tracklist li {
-      padding:14px 0;
-      border-bottom:1px solid rgba(255,255,255,0.08);
-      opacity:0.7;
-      transition:0.3s;
-    }
-
-    .tracklist li:hover {
-      opacity:1;
-      transform:translateX(10px);
-    }
-
-    /* MAIL */
-    .mailing { text-align:center; }
-
-    input {
-      margin-top:25px;
-      padding:14px;
-      width:260px;
-      background:#140c0c;
-      border:none;
-      color:white;
-    }
-
-    /* INTERACTIVE CURSOR GLOW */
-    .cursor-glow {
-      position:fixed;
-      width:300px;
-      height:300px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(120,30,40,0.25), transparent 70%);
-      pointer-events:none;
-      transform:translate(-50%, -50%);
+      opacity:0.9;
     }
 
     footer {
-      text-align:center;
-      padding:60px;
-      opacity:0.4;
+      position:absolute;
+      bottom:20px;
+      left:20px;
+      font-size:12px;
+      opacity:0.7;
+    }
+
+    @media (max-width:768px) {
+      .title { font-size:28vw; }
+      .cover-art { width:180px; }
     }
 
   </style>
 </head>
 <body>
 
-<div class="fog"></div>
-<div class="cursor-glow" id="glow"></div>
-
 <section class="hero">
-  <h1>It Came From the Ether</h1>
-  <p>a signal you were never meant to receive</p>
-  <button class="btn">Enter Transmission</button>
-</section>
 
-<section class="vinyl">
-  <div class="record"></div>
-  <div class="vinyl-text">
-    <h2>Maroon Pressing</h2>
-    <p>etched in silence. carried through static. each rotation reveals something new.</p>
-    <button class="btn">Acquire</button>
+  <div class="artist">ANDY WHELAN VITA</div>
+
+  <div class="title">ICFTE</div>
+
+  <div class="tracklist">
+    <p>Tourist</p>
+    <p>It Takes Two</p>
+    <p>Never Too Far</p>
+    <p>If I Could</p>
+    <p>Look Ahead</p>
   </div>
+
+  <img src="Cover.png" class="cover-art" alt="cover art">
+
+  <footer>@ICFTE</footer>
+
 </section>
-
-<section class="tracklist">
-  <h2>Transmission Log</h2>
-  <ul>
-    <li>01 — arrival through static</li>
-    <li>02 — ether bloom</li>
-    <li>03 — signals we forgot</li>
-    <li>04 — maroon skies</li>
-    <li>05 — hollow frequencies</li>
-    <li>06 — memory drips like wax</li>
-    <li>07 — choir of the unseen</li>
-    <li>08 — return to silence</li>
-  </ul>
-</section>
-
-<section class="mailing">
-  <h2>Join the Signal</h2>
-  <p>be the first to hear what shouldn't exist</p>
-  <input type="email" placeholder="enter your email">
-  <br>
-  <button class="btn">connect</button>
-</section>
-
-<footer>
-  <p>ICFTE ©</p>
-</footer>
-
-<script>
-  const glow = document.getElementById('glow');
-  document.addEventListener('mousemove', e => {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
-  });
-</script>
 
 </body>
 </html>
