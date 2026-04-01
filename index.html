@@ -3,178 +3,199 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>It Came From the Ether</title>
+  <title>ICFTE — Experience</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
 
     body {
-      font-family: 'Anton', sans-serif;
-      background: linear-gradient(180deg, #1a0f0e, #3b1e22, #2b1d1b);
-      color: #f2e8e5;
-      overflow-x: hidden;
+      font-family:'Anton', sans-serif;
+      background:#0b0606;
+      color:#f3e9e6;
+      overflow-x:hidden;
     }
 
-    section {
-      padding: 80px 10%;
+    section { padding:100px 12%; position:relative; }
+
+    h1,h2 { letter-spacing:4px; text-transform:uppercase; }
+
+    /* GLOBAL GLOW / ATMOSPHERE */
+    .fog {
+      position:fixed;
+      width:200%;
+      height:200%;
+      top:-50%; left:-50%;
+      background:radial-gradient(circle, rgba(120,30,40,0.08), transparent 60%);
+      animation: drift 25s linear infinite;
+      pointer-events:none;
     }
 
-    h1, h2, h3 {
-      letter-spacing: 3px;
-      text-transform: uppercase;
+    @keyframes drift {
+      from { transform:translate(0,0); }
+      to { transform:translate(200px,150px); }
     }
 
     /* HERO */
     .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: radial-gradient(circle at center, rgba(122,38,46,0.4), #0d0706);
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
     }
 
     .hero h1 {
-      font-size: 5rem;
+      font-size:5rem;
+      text-shadow:0 0 25px rgba(255,180,160,0.15);
     }
 
     .hero p {
-      margin-top: 15px;
-      opacity: 0.7;
-      font-size: 1.2rem;
-    }
-
-    .glow {
-      text-shadow: 0 0 20px rgba(255, 200, 180, 0.3);
+      margin-top:20px;
+      opacity:0.6;
+      letter-spacing:2px;
     }
 
     .btn {
-      margin-top: 30px;
-      padding: 12px 28px;
-      border: 1px solid #f2e8e5;
-      background: transparent;
-      color: #f2e8e5;
-      cursor: pointer;
-      transition: 0.3s;
+      margin-top:40px;
+      padding:12px 30px;
+      border:1px solid rgba(255,255,255,0.4);
+      background:transparent;
+      color:white;
+      cursor:pointer;
+      transition:0.4s;
     }
 
     .btn:hover {
-      background: #f2e8e5;
-      color: #1a0f0e;
+      background:white;
+      color:black;
     }
 
-    /* VINYL SECTION */
+    /* VINYL */
     .vinyl {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
-      justify-content: center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:60px;
+      flex-wrap:wrap;
     }
 
-    .vinyl img {
-      width: 300px;
-      border-radius: 50%;
-      box-shadow: 0 0 40px rgba(0,0,0,0.6);
-      animation: spin 20s linear infinite;
+    .record {
+      width:260px;
+      height:260px;
+      border-radius:50%;
+      background:radial-gradient(circle, #300, #000 70%);
+      box-shadow:0 0 60px rgba(0,0,0,0.9);
+      animation:spin 18s linear infinite;
     }
 
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
+    @keyframes spin { from{transform:rotate(0);} to{transform:rotate(360deg);} }
 
-    .vinyl-text {
-      max-width: 400px;
-    }
+    .vinyl-text { max-width:420px; }
+
+    .vinyl-text p { opacity:0.7; margin-top:15px; }
 
     /* TRACKLIST */
-    .tracklist ul {
-      list-style: none;
-      margin-top: 20px;
-    }
+    .tracklist ul { list-style:none; margin-top:30px; }
 
     .tracklist li {
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      opacity: 0.8;
+      padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      opacity:0.7;
+      transition:0.3s;
     }
 
-    /* MAILING LIST */
-    .mailing {
-      text-align: center;
+    .tracklist li:hover {
+      opacity:1;
+      transform:translateX(10px);
     }
+
+    /* MAIL */
+    .mailing { text-align:center; }
 
     input {
-      padding: 12px;
-      width: 250px;
-      border: none;
-      margin-top: 20px;
-      background: #2b1d1b;
-      color: white;
+      margin-top:25px;
+      padding:14px;
+      width:260px;
+      background:#140c0c;
+      border:none;
+      color:white;
+    }
+
+    /* INTERACTIVE CURSOR GLOW */
+    .cursor-glow {
+      position:fixed;
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(120,30,40,0.25), transparent 70%);
+      pointer-events:none;
+      transform:translate(-50%, -50%);
     }
 
     footer {
-      text-align: center;
-      padding: 40px;
-      opacity: 0.5;
+      text-align:center;
+      padding:60px;
+      opacity:0.4;
     }
 
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1 class="glow">It Came From the Ether</h1>
-    <p>ICFTE — a transmission from somewhere beyond memory</p>
-    <button class="btn">Listen Now</button>
-  </section>
+<div class="fog"></div>
+<div class="cursor-glow" id="glow"></div>
 
-  <!-- VINYL -->
-  <section class="vinyl">
-    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d" alt="vinyl">
-    <div class="vinyl-text">
-      <h2>Limited Vinyl</h2>
-      <p>A warm, analog echo of something distant. Pressed in deep maroon. Every crackle tells a story.</p>
-      <button class="btn">Pre-order</button>
-    </div>
-  </section>
+<section class="hero">
+  <h1>It Came From the Ether</h1>
+  <p>a signal you were never meant to receive</p>
+  <button class="btn">Enter Transmission</button>
+</section>
 
-  <!-- TRACKLIST -->
-  <section class="tracklist">
-    <h2>Tracklist</h2>
-    <ul>
-      <li>01 — Arrival Through Static</li>
-      <li>02 — Ether Bloom</li>
-      <li>03 — Signals We Forgot</li>
-      <li>04 — Maroon Skies</li>
-      <li>05 — Hollow Frequencies</li>
-      <li>06 — Memory Drips Like Wax</li>
-      <li>07 — Choir of the Unseen</li>
-      <li>08 — Return to Silence</li>
-    </ul>
-  </section>
+<section class="vinyl">
+  <div class="record"></div>
+  <div class="vinyl-text">
+    <h2>Maroon Pressing</h2>
+    <p>etched in silence. carried through static. each rotation reveals something new.</p>
+    <button class="btn">Acquire</button>
+  </div>
+</section>
 
-  <!-- MAILING LIST -->
-  <section class="mailing">
-    <h2>Stay Connected</h2>
-    <p>Join the transmission.</p>
-    <input type="email" placeholder="Enter your email">
-    <br>
-    <button class="btn">Subscribe</button>
-  </section>
+<section class="tracklist">
+  <h2>Transmission Log</h2>
+  <ul>
+    <li>01 — arrival through static</li>
+    <li>02 — ether bloom</li>
+    <li>03 — signals we forgot</li>
+    <li>04 — maroon skies</li>
+    <li>05 — hollow frequencies</li>
+    <li>06 — memory drips like wax</li>
+    <li>07 — choir of the unseen</li>
+    <li>08 — return to silence</li>
+  </ul>
+</section>
 
-  <footer>
-    <p>© ICFTE</p>
-  </footer>
+<section class="mailing">
+  <h2>Join the Signal</h2>
+  <p>be the first to hear what shouldn't exist</p>
+  <input type="email" placeholder="enter your email">
+  <br>
+  <button class="btn">connect</button>
+</section>
+
+<footer>
+  <p>ICFTE ©</p>
+</footer>
+
+<script>
+  const glow = document.getElementById('glow');
+  document.addEventListener('mousemove', e => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  });
+</script>
 
 </body>
 </html>
