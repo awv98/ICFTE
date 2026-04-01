@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>It Came From the Ether</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Anton', sans-serif;
+      background: linear-gradient(180deg, #1a0f0e, #3b1e22, #2b1d1b);
+      color: #f2e8e5;
+      overflow-x: hidden;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    h1, h2, h3 {
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(122,38,46,0.4), #0d0706);
+    }
+
+    .hero h1 {
+      font-size: 5rem;
+    }
+
+    .hero p {
+      margin-top: 15px;
+      opacity: 0.7;
+      font-size: 1.2rem;
+    }
+
+    .glow {
+      text-shadow: 0 0 20px rgba(255, 200, 180, 0.3);
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 28px;
+      border: 1px solid #f2e8e5;
+      background: transparent;
+      color: #f2e8e5;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #f2e8e5;
+      color: #1a0f0e;
+    }
+
+    /* VINYL SECTION */
+    .vinyl {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vinyl img {
+      width: 300px;
+      border-radius: 50%;
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+      animation: spin 20s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .vinyl-text {
+      max-width: 400px;
+    }
+
+    /* TRACKLIST */
+    .tracklist ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .tracklist li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.8;
+    }
+
+    /* MAILING LIST */
+    .mailing {
+      text-align: center;
+    }
+
+    input {
+      padding: 12px;
+      width: 250px;
+      border: none;
+      margin-top: 20px;
+      background: #2b1d1b;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      opacity: 0.5;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1 class="glow">It Came From the Ether</h1>
+    <p>ICFTE — a transmission from somewhere beyond memory</p>
+    <button class="btn">Listen Now</button>
+  </section>
+
+  <!-- VINYL -->
+  <section class="vinyl">
+    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d" alt="vinyl">
+    <div class="vinyl-text">
+      <h2>Limited Vinyl</h2>
+      <p>A warm, analog echo of something distant. Pressed in deep maroon. Every crackle tells a story.</p>
+      <button class="btn">Pre-order</button>
+    </div>
+  </section>
+
+  <!-- TRACKLIST -->
+  <section class="tracklist">
+    <h2>Tracklist</h2>
+    <ul>
+      <li>01 — Arrival Through Static</li>
+      <li>02 — Ether Bloom</li>
+      <li>03 — Signals We Forgot</li>
+      <li>04 — Maroon Skies</li>
+      <li>05 — Hollow Frequencies</li>
+      <li>06 — Memory Drips Like Wax</li>
+      <li>07 — Choir of the Unseen</li>
+      <li>08 — Return to Silence</li>
+    </ul>
+  </section>
+
+  <!-- MAILING LIST -->
+  <section class="mailing">
+    <h2>Stay Connected</h2>
+    <p>Join the transmission.</p>
+    <input type="email" placeholder="Enter your email">
+    <br>
+    <button class="btn">Subscribe</button>
+  </section>
+
+  <footer>
+    <p>© ICFTE</p>
+  </footer>
+
+</body>
+</html>
