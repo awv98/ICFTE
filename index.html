@@ -12,7 +12,7 @@
 
     body {
       font-family:'Poppins', sans-serif;
-      background:#8a3f14;
+      background:#8a3f14; /* clean flat background */
       color:#e8e3df;
       overflow:hidden;
     }
@@ -26,24 +26,13 @@
       justify-content:center;
       align-items:center;
       text-align:center;
+      padding:40px;
     }
 
-    /* BACKGROUND IMAGE */
-    .bg-image {
-      position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      z-index:0;
-      opacity:0.9;
-    }
-
-    /* CONTENT */
     .content {
       position:relative;
       z-index:2;
+      max-width:800px;
     }
 
     .artist {
@@ -69,6 +58,17 @@
 
     .tracklist p { margin:3px 0; }
 
+    /* CHARACTER IMAGE (BOTTOM RIGHT, NON-INTRUSIVE) */
+    .character {
+      position:absolute;
+      bottom:0;
+      right:0;
+      width:35vw;
+      max-width:420px;
+      pointer-events:none;
+      z-index:1;
+    }
+
     footer {
       position:absolute;
       bottom:20px;
@@ -80,6 +80,7 @@
 
     @media (max-width:768px) {
       .title { font-size:28vw; }
+      .character { width:60vw; opacity:0.9; }
     }
 
   </style>
@@ -87,9 +88,6 @@
 <body>
 
 <div class="container">
-
-  <!-- Background Image -->
-  <img src="image.png" class="bg-image" alt="art">
 
   <div class="content">
     <div class="artist">ANDY WHELAN VITA</div>
@@ -103,6 +101,9 @@
       <p>Look Ahead</p>
     </div>
   </div>
+
+  <!-- IMPORTANT: use a CUTOUT PNG (transparent background) -->
+  <img src="woman-cutout.png" class="character" alt="figure">
 
   <footer>@ICFTE</footer>
 
